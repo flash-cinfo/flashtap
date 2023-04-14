@@ -3,8 +3,10 @@
 #include <utility>
 #include "engine/animation/Animations.h"
 #include "ShooterConsts.h"
+#include "engine/io/Screen.h"
 #include "engine/io/SoundController.h"
 #include "ShooterConsts.h"
+#include "debug/MenuInit.h"
 
 using namespace std;
 
@@ -67,7 +69,13 @@ void Shooter::start() {
     // This code executed once in the beginning:
     setUpdateWorld(false);
 
-    screen->setMouseCursorVisible(true);
+    if (debugmenuinit.isOpen == true) {
+        screen->setMouseCursorVisible(true);
+        screen->setMouseCursorGrubbed(false);
+    } else {
+        screen->setMouseCursorVisible(false);
+        screen->setMouseCursorGrubbed(true);
+    }
 
     world->loadMap(ShooterConsts::MAP_OBJ, Vec3D{5, 5, 5});
 

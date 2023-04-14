@@ -19,6 +19,7 @@ private:
     std::shared_ptr<PlayerController> playerController = std::make_shared<PlayerController>(player, keyboard, mouse);
 
     Window mainMenu;
+    DebugMenuInit debugmenuinit = DebugMenuInit();
 
     std::shared_ptr<ShooterServer> server = std::make_shared<ShooterServer>();
     std::shared_ptr<ShooterClient> client = std::make_shared<ShooterClient>(player);

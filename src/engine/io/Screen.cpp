@@ -22,12 +22,14 @@ void Screen::open(int screenWidth, int screenHeight, const std::string &name, bo
     settings.antialiasingLevel = 1;
 
     _window->create(sf::VideoMode(screenWidth, screenHeight), name, style, settings);
+    ImguiDebug.Init(_window);
     _window->setVerticalSyncEnabled(verticalSync);
 }
 
 void Screen::display() {
     sf::Event event{};
     while (_window->pollEvent(event)) {
+        ImGui::SFML::ProcessEvent(*_window, event);
         if (event.type == sf::Event::Closed) {
             _window->close();
         }
@@ -40,12 +42,11 @@ void Screen::display() {
         sf::Texture copyTexture;
         copyTexture.create(_window->getSize().x, _window->getSize().y);
         copyTexture.update(*_window);
-        // most of the time of video rendering is wasting on saving .png sequence
-        // that's why we will save all images in the end
-        // TODO: sometimes we have a huge time delay here for no obvious reason
         _renderSequence.push_back(copyTexture);
     }
 
+    ImguiDebug.Update(_window, &deltaClock);
+    ImguiDebug.Render(_window);
     _window->display();
 }
 
@@ -114,6 +115,10 @@ void Screen::close() {
 
 void Screen::setMouseCursorVisible(bool visible) {
     _window->setMouseCursorVisible(visible);
+}
+
+void Screen::setMouseCursorGrubbed(bool grubbed) {
+    _window->setMouseCursorGrabbed(grubbed);
 }
 
 void Screen::drawTetragon(const Vec2D &p1, const Vec2D &p2, const Vec2D &p3, const Vec2D &p4, sf::Color color) {

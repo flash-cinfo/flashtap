@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
-#include "imgui-special/imgui.h"
-#include "imgui-special/imgui-SFML.h"
+#include "imgui/imgui.h"
+#include "imgui/imgui-SFML.h"
 #include <SFML/Window.hpp>
 #include <memory>
-#include "imgui-special/imgui.h"
+#include "imgui/imgui.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include "../engine/io/Keyboard.h"

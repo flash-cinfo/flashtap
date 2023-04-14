@@ -26,12 +26,12 @@ add_executable(${CMAKE_PROJECT_NAME}
         src/ShooterConsts.h
         src/network/ShooterMsgType.h
         src/network/ShooterMsgType.cpp
-        src/debug/imgui-special/imgui.cpp
-        src/debug/imgui-special/imgui_demo.cpp
-        src/debug/imgui-special/imgui_draw.cpp
-        src/debug/imgui-special/imgui_tables.cpp
-        src/debug/imgui-special/imgui_widgets.cpp
-        src/debug/imgui-special/imgui-SFML.cpp
+        src/debug/imgui/imgui.cpp
+        src/debug/imgui/imgui_demo.cpp
+        src/debug/imgui/imgui_draw.cpp
+        src/debug/imgui/imgui_tables.cpp
+        src/debug/imgui/imgui_widgets.cpp
+        src/debug/imgui/imgui-SFML.cpp
         src/debug/MenuInit.cpp
         # 3d engine:
         src/engine/Consts.h

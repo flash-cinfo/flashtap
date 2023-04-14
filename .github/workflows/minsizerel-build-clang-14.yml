@@ -1,4 +1,4 @@
-name: Release Build clang-15
+name: MinSizeRel Build clang-14
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  BUILD_TYPE: Debug
+  BUILD_TYPE: MinSizeRel
 
 jobs:
   build:
@@ -22,8 +22,8 @@ jobs:
     - name: Download && Install build depend
       run: sudo apt install build-essential mesa-utils
     
-    - name: Download && Install clang-16
-      run: sudo apt install clang-16
+    - name: Download && Install clang-14
+      run: sudo apt install clang-14
       
     - name: Download && Install FreeGlut
       run: sudo apt install freeglut3 freeglut3-dev

@@ -1,4 +1,4 @@
-name: Release Build clang-15
+name: MinSizeRel Build clang-15
 
 on:
   push:

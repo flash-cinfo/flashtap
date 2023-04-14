@@ -1,4 +1,4 @@
-name: Release Build clang-15
+name: Debug Build gcc-12
 
 on:
   push:

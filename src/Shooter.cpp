@@ -1,7 +1,3 @@
-//
-// Created by Иван Ильин on 22.09.2021.
-//
-
 #include "Shooter.h"
 #include <fstream>
 #include <utility>

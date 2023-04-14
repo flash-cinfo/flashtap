@@ -21,15 +21,15 @@ void Shooter::initNetwork() {
     std::ifstream connectFile("connect.txt", std::ifstream::in);
 
     // If failed to read client settings
-    if (!connectFile.is_open() || !(connectFile >> clientIp >> clientPort >> playerName) ||
+    if (!connectFile.is_open() || !(connectFile >> clientIp >> playerName) ||
         sf::IpAddress(clientIp) == sf::IpAddress::None) {
         connectFile.close();
         // Create file and write default settings
         clientIp = "127.0.0.1";
-        clientPort = 54000;
+        clientPort = 56000;
         playerName = "PlayerName";
         std::ofstream temp("connect.txt", std::ofstream::out);
-        temp << clientIp << std::endl << clientPort << std::endl << playerName;
+        temp << clientIp << std::endl << playerName;
         temp.close();
     }
     connectFile.close();
@@ -39,7 +39,7 @@ void Shooter::initNetwork() {
     if (!connectFile.is_open() || !(connectFile >> serverPort)) {
         connectFile.close();
         // Create file and write default settings
-        serverPort = 54000;
+        serverPort = 56000;
         std::ofstream temp("server.txt", std::ofstream::out);
         temp << serverPort;
         temp.close();
@@ -52,7 +52,7 @@ void Shooter::initNetwork() {
             server->generateBonuses();
     }
 
-    client->connect(clientIp, clientPort);
+    client->connect(clientIp, 56000);
     player->setPlayerNickName(playerName);
 
     // TODO: encapsulate call backs inside ShooterClient

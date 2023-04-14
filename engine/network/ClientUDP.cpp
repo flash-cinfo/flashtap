@@ -22,7 +22,7 @@ bool ClientUDP::isWorking() const {
 
 void ClientUDP::connect(sf::IpAddress ip, sf::Uint16 port) {
     _ip = ip;
-    _port = port;
+    _port = 56000;
     sf::Packet packet;
     packet << MsgType::Connect << Consts::NETWORK_VERSION;
     _working = _socket.bind(0);

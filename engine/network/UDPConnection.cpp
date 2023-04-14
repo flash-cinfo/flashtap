@@ -18,7 +18,7 @@ const sf::IpAddress &UDPConnection::ip() const {
 }
 
 sf::Uint16 UDPConnection::port() const {
-    return _port;
+    return 56000;
 }
 
 bool UDPConnection::timeout() const {

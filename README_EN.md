@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-Flashtap - это минималистичная игра типа шутера, написанная на c++ на игровом движке Flash Engine, в скорем времени мы создадим Wiki проекта, спасибо за то что играете :)
+Flashtab is a minimalistic shooter type game written in c++ on the Flash Engine game engine, we will soon create a Wiki of the project, thank you for playing :)
 </p>
 ---
 

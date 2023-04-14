@@ -1,9 +1,7 @@
-//
-// Created by Иван Ильин on 10.10.2021.
-//
-
 #ifndef SHOOTER_SHOOTERCONSTS_H
 #define SHOOTER_SHOOTERCONSTS_H
+
+#include <iostream>
 
 namespace ShooterConsts {
     const double GRAVITY = 35;
@@ -15,6 +13,7 @@ namespace ShooterConsts {
     const double SLOW_MO_COEFFICIENT = 5;
     const double FIRE_DISTANCE = 1000;
     const double BONUS_RECHARGE_TIME = 30;
+    const double MAIN_PORT = 56000;
 
     const std::string PLAYER_NAME = "Player";
     const std::string PROJECT_NAME = "Shooter";

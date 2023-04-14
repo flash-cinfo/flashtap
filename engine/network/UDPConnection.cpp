@@ -5,6 +5,7 @@
 #include "UDPConnection.h"
 #include "../utils/Time.h"
 #include "../Consts.h"
+#include "../../ShooterConsts.h"
 
 UDPConnection::UDPConnection(sf::Uint16 id, sf::IpAddress ip, sf::Uint16 port) : _id(id), _ip(ip), _port(port),
                                                                                  lastMsg(Time::time()) {}
@@ -18,7 +19,7 @@ const sf::IpAddress &UDPConnection::ip() const {
 }
 
 sf::Uint16 UDPConnection::port() const {
-    return 56000;
+    return ShooterConsts::MAIN_PORT;
 }
 
 bool UDPConnection::timeout() const {

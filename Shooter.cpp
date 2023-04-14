@@ -8,6 +8,7 @@
 #include "engine/animation/Animations.h"
 #include "ShooterConsts.h"
 #include "engine/io/SoundController.h"
+#include "ShooterConsts.h"
 
 using namespace std;
 
@@ -26,7 +27,7 @@ void Shooter::initNetwork() {
         connectFile.close();
         // Create file and write default settings
         clientIp = "127.0.0.1";
-        clientPort = 56000;
+        clientPort = ShooterConsts::MAIN_PORT;
         playerName = "PlayerName";
         std::ofstream temp("connect.txt", std::ofstream::out);
         temp << clientIp << std::endl << playerName;

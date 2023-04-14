@@ -1,0 +1,42 @@
+name: Release Build clang-15
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  BUILD_TYPE: RelWithDebInfo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Update Repositories
+      run: sudo apt update
+    
+    - name: Download && Install build depend
+      run: sudo apt install build-essential mesa-utils
+    
+    - name: Download && Install clang-16
+      run: sudo apt install clang-16
+      
+    - name: Download && Install FreeGlut
+      run: sudo apt install freeglut3 freeglut3-dev
+    
+    - name: Download && Install Glew
+      run: sudo apt install libglew-dev
+    
+    - name: Download && Install
+      run: sudo apt install libsfml-dev
+
+    - name: Configure Flashtap 
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build Flashtap
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+

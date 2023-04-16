@@ -8,6 +8,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Keyboard.hpp>
 #include "../engine/io/Keyboard.h"
+#include "../engine/utils/Log.h"
 
 class DebugMenuInit {
 private:

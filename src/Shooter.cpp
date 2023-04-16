@@ -77,7 +77,7 @@ void Shooter::start() {
         screen->setMouseCursorGrubbed(true);
     }
 
-    world->loadMap(ShooterConsts::MY_PLANE, Vec3D{5, 5, 5});
+    world->loadMap(ShooterConsts::BIG_MAP_OBJ, Vec3D{5, 5, 5});
 
     // TODO: encapsulate call backs inside Player
     player->setAddTraceCallBack([this](const Vec3D &from, const Vec3D &to) {

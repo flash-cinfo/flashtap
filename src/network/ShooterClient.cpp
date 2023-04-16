@@ -5,10 +5,10 @@
 #include "ShooterClient.h"
 
 #include <utility>
-#include "../engine/utils/Log.h"
-#include "../engine/animation/Timeline.h"
+#include "../flashEngine/utils/Log.h"
+#include "../flashEngine/animation/Timeline.h"
 #include "ShooterMsgType.h"
-#include "../engine/animation/Animations.h"
+#include "../flashEngine/animation/Animations.h"
 
 void ShooterClient::updatePacket() {
     sf::Packet packet;

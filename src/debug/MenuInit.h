@@ -7,8 +7,8 @@
 #include "imgui/imgui.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Keyboard.hpp>
-#include "../engine/io/Keyboard.h"
-#include "../engine/utils/Log.h"
+#include "../flashEngine/io/Keyboard.h"
+#include "../flashEngine/utils/Log.h"
 
 class DebugMenuInit {
 private:

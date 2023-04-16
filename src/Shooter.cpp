@@ -1,9 +1,9 @@
 #include "Shooter.h"
 #include "ShooterConsts.h"
 #include "debug/MenuInit.h"
-#include "engine/animation/Animations.h"
-#include "engine/io/Screen.h"
-#include "engine/io/SoundController.h"
+#include "flashEngine/animation/Animations.h"
+#include "flashEngine/io/Screen.h"
+#include "flashEngine/io/SoundController.h"
 #include <fstream>
 #include <utility>
 
@@ -82,7 +82,7 @@ void Shooter::start() {
     screen->setMouseCursorGrubbed(true);
   }
 
-  world->loadMap(ShooterConsts::TEST_MAP, Vec3D{5, 5, 5});
+  world->loadMap(ShooterConsts::BIG_MAP_OBJ, Vec3D{5, 5, 5});
 
   // TODO: encapsulate call backs inside Player
   player->setAddTraceCallBack([this](const Vec3D &from, const Vec3D &to) {

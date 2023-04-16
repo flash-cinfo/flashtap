@@ -34,6 +34,9 @@ jobs:
     - name: Download && Install
       run: sudo apt install libsfml-dev
 
+    - name: Download flashEngine
+      run: git clone https://github.com/flash-cinfo/flashEngine ${{github.workspace}}/src/flashEngine
+
     - name: Configure Flashtap 
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 

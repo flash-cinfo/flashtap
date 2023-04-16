@@ -41,6 +41,7 @@ const std::string MAP_OBJ = "obj/maps/map1.obj";
 const std::string BIG_MAP_OBJ = "obj/maps/map2.obj";
 const std::string SIMPLE_MAP_OBJ = "obj/maps/map_simple.obj";
 const std::string PLANE_MAP_OBJ = "obj/maps/plane.obj";
+const std::string TEST_MAP = "obj/maps/mapsetdeb.obj";
 const std::string MAIN_MENU_BACK = "textures/back.png";
 const std::string MAIN_MENU_GUI = "textures/gui.png";
 

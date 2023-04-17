@@ -19,7 +19,7 @@ void Shooter::initNetwork() {
   std::ifstream connectFile("connect.txt", std::ifstream::in);
 
   // If failed to read client settings
-  if (!connectFile.is_open() || !(connectFile >> clientIp >> playerName) ||
+  if (!connectFile.is_open() || !(connectFile >> clientIp  >> clientPort >> playerName) ||
       sf::IpAddress(clientIp) == sf::IpAddress::None) {
     connectFile.close();
     // Create file and write default settings

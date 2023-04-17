@@ -1,3 +1,7 @@
+//
+// Created by Иван Ильин on 22.09.2021.
+//
+
 #ifndef SHOOTER_SHOOTER_H
 #define SHOOTER_SHOOTER_H
 
@@ -9,7 +13,6 @@
 
 #include "network/ShooterClient.h"
 #include "network/ShooterServer.h"
-#include "debug/MenuInit.h"
 
 
 class Shooter final : public Engine {
@@ -20,7 +23,6 @@ private:
     std::shared_ptr<PlayerController> playerController = std::make_shared<PlayerController>(player, keyboard, mouse);
 
     Window mainMenu;
-    DebugMenuInit debugmenuinit = DebugMenuInit();
 
     std::shared_ptr<ShooterServer> server = std::make_shared<ShooterServer>();
     std::shared_ptr<ShooterClient> client = std::make_shared<ShooterClient>(player);

@@ -9,6 +9,7 @@
 
 #include "network/ShooterClient.h"
 #include "network/ShooterServer.h"
+#include "debug/MenuInit.h"
 
 
 class Shooter final : public Engine {

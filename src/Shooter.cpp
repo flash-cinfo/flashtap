@@ -302,15 +302,15 @@ void Shooter::removePlayer(sf::Uint16 id) {
 }
 
 void Shooter::addFireTrace(const Vec3D &from, const Vec3D &to) {
-    std::string traceName = "Client_fireTrace_" + std::to_string(fireTraces++);
-    world->addBody(std::make_shared<RigidBody>(Mesh::LineTo(ObjectNameTag(traceName), from, to, 0.05)));
-    world->body(ObjectNameTag(traceName))->setCollider(false);
+    // std::string traceName = "Client_fireTrace_" + std::to_string(fireTraces++);
+    // world->addBody(std::make_shared<RigidBody>(Mesh::LineTo(ObjectNameTag(traceName), from, to, 0.05)));
+    // world->body(ObjectNameTag(traceName))->setCollider(false);
 
-    Timeline::addAnimation<AColor>(AnimationListTag(traceName + "_fadeOut"), world->body(ObjectNameTag(traceName)),
-                                   sf::Color{150, 150, 150, 0});
-    Timeline::addAnimation<AFunction>(AnimationListTag(traceName + "_delete"),
-                                      [this, traceName]() { removeFireTrace(ObjectNameTag(traceName)); }, 1,
-                                      1);
+    // Timeline::addAnimation<AColor>(AnimationListTag(traceName + "_fadeOut"), world->body(ObjectNameTag(traceName)),
+    //                                sf::Color{150, 150, 150, 0});
+    // Timeline::addAnimation<AFunction>(AnimationListTag(traceName + "_delete"),
+    //                                   [this, traceName]() { removeFireTrace(ObjectNameTag(traceName)); }, 1,
+    //                                   1);
 
 
     std::string bulletHoleName = "Client_bulletHole_" + std::to_string(fireTraces++);

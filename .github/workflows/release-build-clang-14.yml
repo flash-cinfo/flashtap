@@ -37,9 +37,9 @@ jobs:
     - name: Download flashEngine
       run: git clone https://github.com/flash-cinfo/flashEngine ${{github.workspace}}/src/flashEngine
 
-    - name: Configure Flashtap 
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+    - name: Configure Setup with Meson
+      run: CC=clang CXX=clang++ meson setup ${{github.workspace}}/builddir -Dbuildtype=release
 
     - name: Build Flashtap
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      run: cd ${{github.workspace}}/builddir && meson compile
 

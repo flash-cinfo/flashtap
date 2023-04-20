@@ -7,3 +7,4 @@ server.txt
 connect.txt
 server.txt
 src/imgui.ini
+builddir/

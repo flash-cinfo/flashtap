@@ -1,4 +1,4 @@
-project('flashtap', 'cpp')
+project('flashtap', 'cpp', default_options : ['cpp_std=c++17', 'cpp_stdlib=libc++'])
 
 files = [
     'src/Source.cpp',
@@ -117,7 +117,7 @@ executable('flashtap', files,
     include_directories: 'src',
     dependencies : [
         dependency('sfml-all'),
-        dependency('freeglut'),
+        dependency('glew'),
         dependency('opengl'),
     ],
     #c_args : cpp.get_supported_arguments(['-Wall'])

@@ -29,7 +29,7 @@ jobs:
       run: sudo apt install clang-15
       
     - name: Download && Install FreeGlut
-      run: sudo apt install freeglut3 freeglut3-dev
+      run: sudo apt install freeglut3 freeglut3-dev libglew-dev
     
     - name: Download && Install Glew
       run: sudo apt install libglew-dev

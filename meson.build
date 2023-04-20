@@ -119,7 +119,7 @@ executable('flashtap', files,
     include_directories: 'src',
     dependencies : [
         dependency('sfml-all'),
-        dependency('freeglut'),
+        dependency('glew'),
         dependency('opengl'),
     ],
     cpp_args : '-Wc++17-extensions'

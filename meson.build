@@ -1,6 +1,4 @@
-project('flashtap', 'cpp', default_options : ['cpp_std=c++17'])
-
-add_global_arguments('-lasan -fsanitize=address,leak,undefined', language : 'cpp')
+project('flashtap', 'cpp', default_options : ['cpp_std=c++17', 'warning_level=0'])
 
 files = [
     'src/Source.cpp',
@@ -122,5 +120,5 @@ executable('flashtap', files,
         dependency('glew'),
         dependency('opengl'),
     ],
-    cpp_args : '-Wc++17-extensions'
+    cpp_args : '-lasan -fsanitize=address,leak -Wreorder -Wsign-compare -fno-omit-frame-pointer -mllvm -asan-stack=0'
 )

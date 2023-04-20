@@ -1,4 +1,6 @@
-project('flashtap', 'cpp', default_options : ['cpp_std=c++17', 'cpp_stdlib=libc++'])
+project('flashtap', 'cpp', default_options : ['cpp_std=c++17'])
+
+add_global_arguments('-lasan -fsanitize=address,leak,undefined', language : 'cpp')
 
 files = [
     'src/Source.cpp',
@@ -117,8 +119,8 @@ executable('flashtap', files,
     include_directories: 'src',
     dependencies : [
         dependency('sfml-all'),
-        dependency('glew'),
+        dependency('freeglut'),
         dependency('opengl'),
     ],
-    #c_args : cpp.get_supported_arguments(['-Wall'])
+    cpp_args : '-Wc++17-extensions'
 )

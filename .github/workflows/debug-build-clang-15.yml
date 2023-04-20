@@ -20,7 +20,7 @@ jobs:
       run: sudo apt update
     
     - name: Download && Install build depend
-      run: sudo apt install build-essential mesa-utils
+      run: sudo apt install build-essential mesa-utils python3 python3-pip python3-setuptools python3-wheel ninja-build
     
     - name: Download && Install clang-15
       run: sudo apt install clang-15
